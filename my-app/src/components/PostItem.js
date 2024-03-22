@@ -1,10 +1,12 @@
 import React from "react";
 import css from "./css/PostItem.module.css";
 
-function PostItem({ savedPosts }) {
-    return savedPosts.map(({ title, name, image, description }) => {
+function PostItem(props) {
+    return props.savedPosts.map((post) => {
+        // Extra task destructuring
+        const { title, name, image, description } = post;
         return (
-            <div className={css.searchItem} key={title}>
+            <div className={css.SearchItem} key={title}>
                 <p>{title}</p>
                 <p>{name}</p>
                 <img src={image} alt="random" />
